@@ -5,6 +5,7 @@
   --primary-bg-color: #2f303a;
   --secondary-bg-color: #f5f4fa;
   --accent-color: #2196f3;
+  --secondary-accent-color: #188ce8;
   --logo-header-color: #000000;
   --btn-bg-color: #f5f4fa;
   --border-color: #eeeeee;
@@ -238,12 +239,14 @@ body {
   color: var(--third-text-color);
   border-radius: 4px;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary-accent-color);
 }
 
 /* ================SECTIONS================ */
@@ -615,12 +618,14 @@ body {
   color: var(--third-text-color);
   border-radius: 4px;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-btn:hover,
 .subscribe-btn:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--secondary-accent-color);
 }
 
 .subscribe-input:focus {
@@ -814,6 +819,8 @@ body {
 }
 
 .input-label {
+  display: block;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
@@ -843,11 +850,14 @@ body {
 }
 
 .modal-input:focus,
-.modal-comment-input:focus {
+.modal-input:hover,
+.modal-comment-input:focus,
+.modal-comment-input:hover {
   border-color: var(--accent-color);
 }
 
-.modal-input:focus + .modal-input-icon {
+.modal-input:focus + .modal-input-icon,
+.modal-input:hover + .modal-input-icon {
   fill: var(--accent-color);
 }
 .modal-comment-input {
@@ -891,10 +901,11 @@ body {
   width: 16px;
   height: 15px;
   margin-right: 8.38px;
-  padding-left: 3px;
-  padding-top: 4px;
+
+  /* padding-left: 3px;
   padding-bottom: 3px;
-  padding-left: 2px;
+  padding-top: 4px;
+  padding-right: 2px; */
 
   border-radius: 2px;
   border: 2px solid var(--primary-text-color);
@@ -903,10 +914,16 @@ body {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.check-text:hover span,
+.check-text:focus span {
+  border-color: var(--accent-color);
+}
+
 .modal-checkbox:checked + .check-text span {
   background-color: var(--accent-color);
   border: none;
 }
+
 .checkbox-link {
   text-decoration-line: underline;
   color: var(--accent-color);
@@ -932,7 +949,7 @@ body {
 .modal-btn:hover,
 .modal-btn:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background-color: #188ce8;
+  background-color: var(--secondary-accent-color);
 }
 
 .close-btn {
@@ -962,6 +979,11 @@ body {
 .modal-icon {
   width: 18px;
   height: 18px;
+}
+
+.modal-check-icon {
+  width: 13px;
+  height: 12px;
 }
 
 .modal-input-icon {
